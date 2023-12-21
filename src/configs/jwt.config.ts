@@ -1,7 +1,7 @@
 import { ConfigService } from '@nestjs/config';
 import { JwtModuleOptions } from '@nestjs/jwt';
 
-export const getJwtConfig = async (
+export const setupJwtConfig = async (
   configService: ConfigService,
 ): Promise<JwtModuleOptions> => {
   return {

@@ -1,7 +1,7 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
 
-export const getDbConfig = async (
+export const setupDbConfig = async (
   configService: ConfigService,
 ): Promise<TypeOrmModuleOptions> => {
   return {
