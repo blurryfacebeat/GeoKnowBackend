@@ -4,3 +4,4 @@ export const INVALID_PASSWORD_LENGTH =
 export const INVALID_USERNAME_LENGTH =
   'Username length must be from 4 to 16 characters';
 export const USER_ALREADY_EXIST = 'User already exist';
+export const USER_NOT_FOUND = 'User not found';

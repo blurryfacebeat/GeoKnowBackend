@@ -1,10 +1,4 @@
-import {
-  IsEmail,
-  IsNotEmpty,
-  IsString,
-  MaxLength,
-  MinLength,
-} from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString, Length } from 'class-validator';
 import {
   INVALID_EMAIL_TYPE,
   INVALID_PASSWORD_LENGTH,
@@ -18,13 +12,11 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @IsString()
-  @MinLength(8, { message: INVALID_PASSWORD_LENGTH })
-  @MaxLength(32, { message: INVALID_PASSWORD_LENGTH })
+  @Length(8, 32, { message: INVALID_PASSWORD_LENGTH })
   password: string;
 
   @IsNotEmpty()
   @IsString()
-  @MinLength(4, { message: INVALID_USERNAME_LENGTH })
-  @MaxLength(16, { message: INVALID_USERNAME_LENGTH })
+  @Length(4, 16, { message: INVALID_USERNAME_LENGTH })
   username: string;
 }

@@ -1,5 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { BaseTimestampEntity } from '../../utils/base-timestamp-entity';
+import { Exclude } from 'class-transformer';
 
 @Entity()
 export class UserEntity extends BaseTimestampEntity {
@@ -9,9 +10,10 @@ export class UserEntity extends BaseTimestampEntity {
   @Column({ type: 'varchar' })
   email: string;
 
-  @Column({ type: 'varchar', length: 16 })
+  @Column({ type: 'varchar' })
   username: string;
 
-  @Column({ type: 'varchar', length: 32 })
+  @Exclude()
+  @Column({ type: 'varchar' })
   password: string;
 }
